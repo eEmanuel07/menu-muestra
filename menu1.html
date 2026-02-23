@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Digital - Gourmet Express</title>
+    <style>
+        :root {
+            --primario: #d35400;
+            --oscuro: #2c3e50;
+            --claro: #f4f4f4;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--claro);
+            color: var(--oscuro);
+            scroll-behavior: smooth;
+        }
+
+        /* Header con Navegación Fija */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--oscuro);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            overflow-x: auto; /* Para móviles */
+            white-space: nowrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 20px;
+            background-color: var(--primario);
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 800px;
+            margin: 80px auto 40px;
+            padding: 20px;
+        }
+
+        h1 { text-align: center; color: var(--primario); }
+
+        /* Categorías */
+        section {
+            margin-bottom: 40px;
+            padding-top: 60px; /* Espacio para que el header no tape el título */
+        }
+
+        .category-title {
+            border-bottom: 2px solid var(--primario);
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Tarjetas de Platillos */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--blanco);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+            flex: 1;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .price {
+            color: var(--primario);
+            font-weight: bold;
+        }
+
+        .ingredients {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#entradas">Entradas</a>
+        <a href="#fuertes">Platos Fuertes</a>
+        <a href="#pastas">Pastas</a>
+        <a href="#postres">Postres</a>
+        <a href="#bebidas">Bebidas</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Nuestro Menú</h1>
+
+    <section id="entradas">
+        <h2 class="category-title">🥗 Entradas</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/120" alt="Bruschettas">
+                <div class="card-content">
+                    <div class="card-title">Bruschettas <span>$8.00</span></div>
+                    <p class="ingredients">Pan tostado, tomate picado, albahaca fresca y aceite de oliva.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/120" alt="Ceviche">
+                <div class="card-content">
+                    <div class="card-title">Ceviche <span>$12.50</span></div>
+                    <p class="ingredients">Pescado blanco, limón sutil, cebolla morada y cilantro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fuertes">
+        <h2 class="category-title">🥩 Platos Fuertes</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/120" alt="Corte Ribeye">
+                <div class="card-content">
+                    <div class="card-title">Ribeye 300g <span>$25.00</span></div>
+                    <p class="ingredients">Corte de res premium, papas rústicas y mantequilla de hierbas.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/120" alt="Salmón">
+                <div class="card-content">
+                    <div class="card-title">Salmón Grill <span>$22.00</span></div>
+                    <p class="ingredients">Filete de salmón, espárragos al vapor y puré de coliflor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pastas">
+        <h2 class="category-title">🍝 Pastas</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/120" alt="Lasagna">
+                <div class="card-content">
+                    <div class="card-title">Lasagna Boloña <span>$15.00</span></div>
+                    <p class="ingredients">Capas de pasta, carne de res, salsa pomodoro y queso fundido.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/120" alt="Fettuccine">
+                <div class="card-content">
+                    <div class="card-title">Fettuccine Alfredo <span>$14.00</span></div>
+                    <p class="ingredients">Pasta larga en salsa blanca cremosa de parmesano y pollo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="postres">
+        <h2 class="category-title">🍰 Postres</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/120" alt="Tiramisu">
+                <div class="card-content">
+                    <div class="card-title">Tiramisú <span>$7.00</span></div>
+                    <p class="ingredients">Bizcochos café, crema de mascarpone y lluvia de cacao.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/120" alt="Cheesecake">
+                <div class="card-content">
+                    <div class="card-title">Cheesecake <span>$6.50</span></div>
+                    <p class="ingredients">Base crujiente con crema de queso y frutos rojos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bebidas">
+        <h2 class="category-title">🍹 Bebidas</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/120" alt="Limonada">
+                <div class="card-content">
+                    <div class="card-title">Limonada Menta <span>$4.00</span></div>
+                    <p class="ingredients">Limón fresco, hojas de menta y mucho hielo.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/120" alt="Vino Tinto">
+                <div class="card-content">
+                    <div class="card-title">Copa de Vino <span>$9.00</span></div>
+                    <p class="ingredients">Selección de la casa, tinto o blanco (150ml).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
